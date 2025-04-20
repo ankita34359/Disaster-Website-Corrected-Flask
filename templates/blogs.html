@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Disaster Awareness Blog</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='blogs.css') }}">
+</head>
+<body class="blog-page">
+
+  <!-- 🌐 Navbar -->
+  <nav class="navbar">
+    <div class="logo">🛟 ResQNow</div>
+    <ul class="nav-links">
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('mitigation') }}">Mitigation</a></li>
+      <li><a href="{{ url_for('preparedness') }}">Preparedness</a></li>
+      <li><a href="{{ url_for('blogs') }}" class="active">Blogs</a></li>
+      <li><a href="{{ url_for('login') }}">Login</a></li>
+    </ul>
+  </nav>
+
+  <header class="header">
+    <h1>📝 Disaster Information Blog</h1>
+    <p>Explore various disasters and learn how to stay safe and prepared.</p>
+  </header>
+
+  <section class="cards-container">
+
+    <!-- Earthquake -->
+    <a href="{{ url_for('card_page', card_name='earthquake') }}" class="card">
+      <h2>🌍 Earthquake</h2>
+      <p>Understand seismic activity, causes, effects, and protective measures.</p>
+    </a>
+
+    <!-- Flood -->
+    <a href="{{ url_for('card_page', card_name='flood') }}" class="card">
+      <h2>🌊 Flood</h2>
+      <p>Learn flood types, risks, and how to safeguard lives and property.</p>
+    </a>
+
+    <!-- Tsunami -->
+    <a href="{{ url_for('card_page', card_name='tsunami') }}" class="card">
+      <h2>🌊 Tsunami</h2>
+      <p>Discover what triggers tsunamis and how to respond effectively.</p>
+    </a>
+
+    <!-- Landslide -->
+    <a href="{{ url_for('card_page', card_name='landslide') }}" class="card">
+      <h2>⛰️ Landslide</h2>
+      <p>Know why landslides occur and how to stay safe in hilly terrains.</p>
+    </a>
+
+    <!-- Wildfire -->
+    <a href="{{ url_for('card_page', card_name='wildfire') }}" class="card">
+      <h2>🔥 Wildfire</h2>
+      <p>Explore causes of wildfires and the best response strategies.</p>
+    </a>
+
+    <!-- Cyclone -->
+    <a href="{{ url_for('card_page', card_name='cyclone') }}" class="card">
+      <h2>🌀 Cyclone</h2>
+      <p>Understand how cyclones form and steps for disaster readiness.</p>
+    </a>
+
+    <!-- Drought -->
+    <a href="{{ url_for('card_page', card_name='drought') }}" class="card">
+      <h2>☀️ Drought</h2>
+      <p>Learn the environmental and human impact of prolonged drought.</p>
+    </a>
+
+    <!-- Pandemic -->
+    <a href="{{ url_for('card_page', card_name='pandemic') }}" class="card">
+      <h2>🦠 Pandemic</h2>
+      <p>Know how health disasters spread and the importance of early actions.</p>
+    </a>
+
+    <!-- Severe Storm -->
+    <a href="{{ url_for('card_page', card_name='severe-storm') }}" class="card">
+      <h2>🌩️ Severe Storm</h2>
+      <p>Stay safe during severe storms by learning essential safety tips.</p>
+    </a>
+
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Disaster Awareness | Knowledge is Safety.</p>
+  </footer>
+</body>
+</html>

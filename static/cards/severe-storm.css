@@ -1,0 +1,97 @@
+/* 🌩️ Severe Storm Page Styles */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #6b7ff2, #c8c8ff);
+    background-size: 300% 300%;
+    animation: stormBG 18s ease infinite;
+    color: #1f2937;
+    overflow-x: hidden;
+  }
+  
+  @keyframes stormBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .storm-hero {
+    padding: 2.5rem 1rem 2rem;
+    text-align: center;
+    background-color: rgba(49, 71, 93, 0.85);
+    backdrop-filter: blur(3px);
+    color: #ffffff;
+  }
+  
+  .storm-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: fadeDown 1s ease;
+  }
+  
+  .storm-hero p {
+    font-size: 1.1rem;
+    animation: fadeUp 1.2s ease;
+  }
+  
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .qa-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .qa-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-left: 6px solid #6366f1;
+    border-radius: 16px;
+    padding: 1.5rem;
+    flex: 1 1 480px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  
+  .qa-box h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #4f46e5;
+  }
+  
+  .qa-box ul {
+    list-style-type: disc;
+    padding-left: 1.2rem;
+  }
+  
+  .qa-box li {
+    margin-bottom: 0.6rem;
+    line-height: 1.6;
+  }
+  
+  .qa-box:hover {
+    transform: translateY(-6px);
+    background-color: #f0f4ff;
+  }
+  
+  .storm-footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #1f2937;
+    color: #e5e7eb;
+    font-size: 0.95rem;
+  }
+  

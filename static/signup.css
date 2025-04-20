@@ -1,0 +1,178 @@
+:root {
+    --red: #E63946;
+    --orange: #F4A261;
+    --green: #2A9D8F;
+    --blue: #457B9D;
+    --dark: #264653;
+    --light: #F8F9FA;
+    --white: #ffffff;
+    --gray: #e0e0e0;
+  }
+  
+  /* ✅ Base Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  
+  /* 🌐 Navbar */
+  .navbar {
+    background-color: var(--dark);
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    flex-wrap: wrap;
+    position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+  }
+  
+  .nav-links li a.active {
+    background-color: var(--orange);
+    color: var(--white);
+    font-weight: bold;
+  }
+  
+  .nav-links li a:hover {
+    color: var(--green);
+  }
+  
+
+/* 🔐 Auth Pages (Login/Signup) */
+  .auth-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #264653, #2a9d8f, #e9c46a, #f4a261, #e76f51);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    padding: 2rem;
+    overflow: hidden;
+  }
+  
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* 📦 Form Container */
+  .form-container {
+    background: #ffffffcc;
+    backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .form-container h2 {
+    margin-bottom: 1.5rem;
+    color: #2a2a2a;
+  }
+  
+  /* ✍️ Input Fields */
+  form input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    margin: 0.6rem 0;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    outline: none;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  form input:focus {
+    border-color: #2a9d8f;
+  }
+  
+  /* 👁 Show Password Section */
+  .show-password {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin: 0.5rem 0 1.2rem;
+    font-size: 0.9rem;
+    justify-content: flex-start;
+  }
+  
+  .show-password label {
+    white-space: nowrap;
+    margin-left: 4px;
+  }
+  
+  /* 🚀 Button Styling */
+  button {
+    width: 100%;
+    padding: 0.9rem;
+    background-color: #2a9d8f;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #21867a;
+    transform: scale(1.03);
+  }
+  
+  /* 🔁 Switch Form Link */
+  .switch-link {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .switch-link a {
+    color: #e76f51;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .switch-link a:hover {
+    text-decoration: underline;
+  }
+  

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Know Your Risk | ResQNow</title>
+  <!-- <link rel="stylesheet" href="mitigation.css" /> -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='mitigation.css') }}">
+
+</head>
+<body class="auth-bg">
+
+  <!-- Using url_for -->
+<nav class="navbar">
+  <div class="logo">🛟 ResQNow</div>
+  <ul class="nav-links">
+    <li><a href="{{ url_for('home') }}">Home</a></li>
+    <li><a href="{{ url_for('mitigation') }}" class="active">Mitigation</a></li>
+    <li><a href="{{ url_for('preparedness') }}">Preparedness</a></li>
+    <li><a href="{{ url_for('blogs') }}">Blogs</a></li>
+    <li><a href="{{ url_for('login') }}">Login</a></li>
+  </ul>
+</nav>
+
+  <section class="mitigation-section">
+    <div class="form-container mitigation-box">
+      <h2>Know Your Risk</h2>
+      <p>Find out the most common disasters in your region and how to minimize their impact.</p>
+
+      <label for="location" class="select-label">Select Your State/Region:</label>
+      <select id="state" class="dropdown">
+        <option value="">Choose State</option>
+        <option value="Andhra Pradesh">Andhra Pradesh</option>
+        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+        <option value="Assam">Assam</option>
+        <option value="Bihar">Bihar</option>
+        <option value="Chhattisgarh">Chhattisgarh</option>
+        <option value="Goa">Goa</option>
+        <option value="Gujarat">Gujarat</option>
+        <option value="Haryana">Haryana</option>
+        <option value="Himachal Pradesh">Himachal Pradesh</option>
+        <option value="Jharkhand">Jharkhand</option>
+        <option value="Karnataka">Karnataka</option>
+        <option value="Kerala">Kerala</option>
+        <option value="Madhya Pradesh">Madhya Pradesh</option>
+        <option value="Maharashtra">Maharashtra</option>
+        <option value="Manipur">Manipur</option>
+        <option value="Meghalaya">Meghalaya</option>
+        <option value="Mizoram">Mizoram</option>
+        <option value="Nagaland">Nagaland</option>
+        <option value="Odisha">Odisha</option>
+        <option value="Punjab">Punjab</option>
+        <option value="Rajasthan">Rajasthan</option>
+        <option value="Sikkim">Sikkim</option>
+        <option value="Tamil Nadu">Tamil Nadu</option>
+        <option value="Telangana">Telangana</option>
+        <option value="Tripura">Tripura</option>
+        <option value="Uttar Pradesh">Uttar Pradesh</option>
+        <option value="Uttarakhand">Uttarakhand</option>
+        <option value="West Bengal">West Bengal</option>
+      </select>
+      
+      <button onclick="checkRisk()" class="btn green">Check Risk</button>
+
+      <div id="riskOutput" class="risk-box" style="display:none;"></div>
+    </div>
+  </section>
+
+  <!-- 🌍 ML Model 1: Disaster-Prone Area Classification -->
+<div class="mitigation-box-one">
+  <section class="mitigation-section">
+    <div class="form-container mitigation-box">
+      <h2>📍 Predict Disaster Risk Level</h2>
+      <form id="riskForm" onsubmit="checkRiskLevel(event)">
+        <label>Latitude: <input type="number" step="any" name="lat" required></label>
+        <label>Longitude: <input type="number" step="any" name="lng" required></label>
+        <label>Elevation (meters): <input type="number" name="elevation" required></label>
+        <label>Population Density: <input type="number" name="population" required></label>
+        <label>Urbanization (%): <input type="number" name="urbanization" required></label>
+        <button type="submit" class="btn green">Check Risk Level</button>
+      </form>
+      <div id="riskResult" class="risk-box" style="display:none;"></div>
+    </div>
+  </section>
+
+  <!-- 🏗️ ML Model 2: Infrastructure Vulnerability Detection -->
+  <section class="mitigation-section">
+    <div class="form-container mitigation-box">
+      <h2>🏗️ Infrastructure Vulnerability Detector</h2>
+      <form id="infraForm" onsubmit="checkInfrastructureVulnerability(event)">
+        <label>Building Age (years): <input type="number" name="age" required></label>
+        <label>Floors: <input type="number" name="floors" required></label>
+        <label>Material Type: <input type="text" name="material" required></label>
+        <label>Past Damage Reports: <input type="number" name="damageReports" required></label>
+        <button type="submit" class="btn green">Check Vulnerability</button>
+      </form>
+      <div id="infraResult" class="risk-box" style="display:none;"></div>
+    </div>
+  </section>
+</div>
+  <!-- <script src="mitigation.js"></script> -->
+  <script src="{{ url_for('static', filename='mitigation.js') }}"></script>
+</body>
+</html>

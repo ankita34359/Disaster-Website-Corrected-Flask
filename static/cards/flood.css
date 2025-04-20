@@ -1,0 +1,140 @@
+:root {
+    --blue-dark: #1e3a8a;
+    --blue-light: #60a5fa;
+    --white: #ffffff;
+    --gray: #f1f5f9;
+    --shadow: rgba(0, 0, 0, 0.1);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    overflow-x: hidden;
+    background: linear-gradient(to right, #1e3a8a, #3b82f6);
+    font-family: 'Segoe UI', sans-serif;
+    color: var(--white);
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    overflow-y: auto;
+  }
+  
+  /* Hero Section - Minimized */
+  .flood-hero {
+    height: 35vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(to right, #1e3a8a, #60a5fa);
+    color: var(--white);
+    box-shadow: 0 4px 10px var(--shadow);
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    animation: fadeDown 1s ease-in-out;
+  }
+  
+  .hero-content p {
+    font-size: 1.1rem;
+    animation: fadeUp 1s ease-in-out;
+  }
+  
+  /* Q&A Boxes */
+  .qa-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: var(--gray);
+    padding: 3rem 1rem;
+    color: #1f2937;
+    overflow: hidden;
+  }
+  
+  .qa-box {
+    background-color: var(--white);
+    color: #1f2937;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+    padding: 2rem;
+    width: 30%;
+    min-width: 300px;
+    max-width: 400px;
+    transition: all 0.3s ease;
+  }
+  
+  .qa-box:hover {
+    transform: translateY(-10px);
+    background: #e0f2fe;
+  }
+  
+  .qa-box h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--blue-dark);
+  }
+  
+  .qa-box p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  
+  /* Footer */
+  .flood-footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--blue-dark);
+    color: var(--white);
+  }
+  
+  /* Animations */
+  @keyframes fadeDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .qa-box {
+      width: 90%;
+    }
+  
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+  
+    .hero-content p {
+      font-size: 1rem;
+    }
+  }
+
+  body {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  

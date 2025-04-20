@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disaster Assistant Chatbot</title>
+  <!-- <link rel="stylesheet" href="chatbot.css"> -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='chatbot.css') }}">
+  
+  
+</head>
+<body>
+
+  <!-- Chatbot Container (Initially Hidden) -->
+  <div class="chatbox-container hidden" id="chatbot-box">
+    <div class="chat-header">
+      💬 Disaster Help Bot
+      <span id="close-chat" class="close-btn">×</span>
+    </div>
+    
+    <div class="chat-box" id="chat-window">
+      <div class="message bot-msg fade-in">
+        Hello! 👋 Ask me anything about natural disasters. I'm here to help!
+      </div>
+    </div>
+    
+    <div class="chat-input">
+      <input type="text" id="chat-input" placeholder="Type your question here...">
+      <button id="send-btn">Send</button>
+    </div>
+  </div>
+
+  <!-- Floating Chat Icon -->
+  <div class="chatbot-icon" id="chatbot-toggle">💬</div>
+
+  <!-- <script src="chatbot.js"></script> -->
+  <script src="{{ url_for('static', filename='chatbot.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+/* ⛰️ Landslide Theme Styles */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom right, #556270, #4ECDC4);
+    background-size: 400% 400%;
+    animation: gradientFlow 15s ease infinite;
+    color: #f9fafb;
+    overflow-x: hidden;
+  }
+  
+  @keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .landslide-hero {
+    padding: 3rem 1rem 2rem;
+    text-align: center;
+    background-color: rgba(20, 33, 61, 0.7);
+    backdrop-filter: blur(6px);
+    color: #ffffff;
+  }
+  
+  .landslide-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: slideIn 1.2s ease-out;
+  }
+  
+  .landslide-hero p {
+    font-size: 1.2rem;
+    animation: fadeIn 1.5s ease-in;
+  }
+  
+  @keyframes slideIn {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .qa-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .qa-box {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 1.5rem;
+    flex: 1 1 450px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, background 0.3s ease;
+    backdrop-filter: blur(6px);
+  }
+  
+  .qa-box h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+  
+  .qa-box ul {
+    list-style-type: disc;
+    padding-left: 1.2rem;
+  }
+  
+  .qa-box li {
+    margin-bottom: 0.6rem;
+    color: #f3f4f6;
+    line-height: 1.6;
+  }
+  
+  .qa-box:hover {
+    transform: translateY(-8px);
+    background-color: rgba(255, 255, 255, 0.12);
+  }
+  
+  .landslide-footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #1b1f2b;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+  }
+  

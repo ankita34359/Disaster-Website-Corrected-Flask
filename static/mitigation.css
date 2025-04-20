@@ -1,0 +1,405 @@
+/* 📍 Mitigation Page Styles + Global Setup */
+
+/* 🎨 Color Palette */
+:root {
+  --red: #E63946;
+  --orange: #F4A261;
+  --green: #2A9D8F;
+  --blue: #457B9D;
+  --dark: #264653;
+  --light: #F8F9FA;
+  --white: #ffffff;
+  --gray: #e0e0e0;
+}
+
+/* ✅ Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--light);
+  color: var(--dark);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* 🌐 Navbar */
+.navbar {
+  background-color: var(--dark);
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  flex-wrap: wrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+  padding: 0.4rem 1.2rem;
+  border-radius: 50px;
+}
+
+.nav-links li a.active {
+  background-color: var(--orange);
+  color: var(--white);
+  font-weight: bold;
+}
+
+.nav-links li a:hover {
+  color: var(--green);
+}
+
+/* 🧭 Mitigation Section */
+.mitigation-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--blue), var(--green), var(--orange));
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  padding-top: 100px;
+}
+
+.mitigation-section p {
+  padding-top: 5px;
+  margin-top: 5px;
+}
+
+.mitigation-section h2 {
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.mitigation-box-one {
+  display: flex;
+  flex-direction: row;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Update for new layout */
+.mitigation-boxes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* First Row: Centered Box (Know your risk) */
+.mitigation-row-1 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Second Row: Predict Disaster Risk Level & Infrastructure Vulnerability Detector side by side */
+.mitigation-row-2 {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+/* Individual Box Styling */
+.mitigation-box {
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+/* 🎯 Form Elements */
+.select-label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: var(--dark);
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.dropdown {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 50px;
+  border: 1px solid #ccc;
+  margin-top: 0.5rem;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+}
+
+.dropdown, .btn.green {
+  width: 100%;
+  display: block;
+  margin: 0.5rem 0;
+}
+
+/* 📦 Risk Info Box */
+.risk-box {
+  margin-top: 1rem;
+  background-color: var(--gray);
+  color: var(--dark);
+  padding: 1rem 1.2rem;
+  border-radius: 20px;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🔘 Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.9rem 1.7rem;
+  margin: 0 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.btn.green {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+.btn.green:hover {
+  background-color: var(--orange);
+  transform: scale(1.05);
+}
+
+/* 📊 ML Forms Container */
+.ml-forms {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* 📄 Each ML Form Box */
+.ml-form-box {
+  background-color: var(--white);
+  padding: 1.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.5s ease-in-out;
+  width: 100%;
+}
+
+/* 🏷 Input Labels */
+.ml-form-box label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--dark);
+}
+
+/* 🧾 Inputs */
+.ml-form-box input,
+.ml-form-box select {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.2rem;
+  border-radius: 8px;
+  border: 1px solid var(--gray);
+  font-size: 1rem;
+  background-color: var(--light);
+}
+
+/* 🧾 Result Box */
+.ml-result {
+  margin-top: 1rem;
+  background-color: var(--gray);
+  color: var(--dark);
+  padding: 1rem 1.2rem;
+  border-radius: 20px;
+  font-size: 1rem;
+  display: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 📱 Responsive (optional, mobile-friendly) */
+@media (max-width: 768px) {
+  .mitigation-box,
+  .ml-form-box {
+      padding: 1rem;
+  }
+
+  .btn {
+      margin: 0.5rem 0;
+  }
+
+  .mitigation-boxes {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Stack the second row boxes vertically on mobile */
+  .mitigation-row-2 {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Input Fields Styling */
+label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus {
+  border-color: #00bfae;
+  box-shadow: 0 0 5px rgba(0, 191, 174, 0.5);
+}
+
+/* input[type="number"] { -moz-appearance: textfield;
+} */
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Button styling */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #00bfae;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #009f92;
+}
+
+button:disabled {
+  background-color: #bdbdbd;
+  cursor: not-allowed;
+}
+
+/* For Risk Output */
+.risk-box {
+  margin-top: 20px;
+  background-color: #f0f4f8;
+  padding: 20px;
+  border-radius: 5px;
+  display: none;
+}
+
+/* Section for Horizontal Boxes */
+.mitigation-section {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Specific Box Layouts */
+.mitigation-box {
+  width: 100%;
+  max-width: 600px;
+}
+
+.mitigation-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Flexbox to align input and form sections horizontally */
+.mitigation-box input,
+.mitigation-box select {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.mitigation-box input[type="submit"] {
+  width: auto;
+  margin-top: 10px;
+}
+
+.mitigation-box .risk-box {
+  display: block;
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+/* Additional Styles for Modern Look */
+.mitigation-box .btn.green {
+  background-color: #00bfae;
+  color: white;
+}
+
+.mitigation-box .btn.green:hover {
+  background-color: #009f92;
+}

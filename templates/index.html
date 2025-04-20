@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ResQNow</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+  <!-- In <head> -->
+<!-- <link rel="stylesheet" href="chatbot/chatbot.css" /> -->
+<link rel="stylesheet" href="{{ url_for('static', filename='chatbot.css') }}">
+</head>
+
+<body>
+
+  <!-- 🌐 Navbar -->
+
+  <!-- Using url_for -->
+<nav class="navbar">
+  <div class="logo">🛟 ResQNow</div>
+  <ul class="nav-links">
+    <li><a href="{{ url_for('home') }}" class="active">Home</a></li>
+    <li><a href="{{ url_for('mitigation') }}">Mitigation</a></li>
+    <li><a href="{{ url_for('preparedness') }}">Preparedness</a></li>
+    <li><a href="{{ url_for('blogs') }}">Blogs</a></li>
+    <li><a href="{{ url_for('login') }}">Login</a></li>
+  </ul>
+</nav>
+
+  <!-- 🏠 Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Stay Ready, Stay Safe with ResQNow</h1>
+      <p>"Disasters don’t wait. Why should you?"</p>
+      <p>"The future belongs to those who prepare for it today."</p>
+
+      <div class="btn-group">
+        <a href="{{ url_for('mitigation') }}" class="btn green">🔍 Know Your Risk</a>
+        <a href="{{ url_for('preparedness') }}" class="btn blue">🛠 Get Ready</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Chatbot Icon -->
+<div id="chatbot-toggle">💬</div>
+
+<!-- Chatbot Box -->
+<div id="chatbot-box" class="hidden">
+  <div class="chat-header">
+    Disaster Assistant 🤖
+    <span id="close-chat">×</span>
+  </div>
+  <div id="chat-window"></div>
+  <div class="chat-input-container">
+    <input type="text" id="chat-input" placeholder="Ask something..." />
+    <button id="send-btn">➤</button>
+  </div>
+</div>
+
+<!-- <script src="script.js"></script> -->
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<!-- Before </body> -->
+<!-- <script src="chatbot/chatbot.js"></script> -->
+<script src="{{ url_for('static', filename='chatbot.js') }}"></script>
+
+
+</body>
+</html>

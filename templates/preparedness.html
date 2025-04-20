@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Preparedness | Disaster Management</title>
+  <!-- <link rel="stylesheet" href="static/preparedness.css" /> -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='preparedness.css') }}">
+  
+  <script src="{{ url_for('static', filename='preparedness.js') }}"></script>
+
+  <!-- <script defer src="preparedness.js"></script> -->
+</head>
+<body>
+  <!-- Using url_for -->
+<nav class="navbar">
+  <div class="logo">🛟 ResQNow</div>
+  <ul class="nav-links">
+    <li><a href="{{ url_for('home') }}">Home</a></li>
+    <li><a href="{{ url_for('mitigation') }}">Mitigation</a></li>
+    <li><a href="{{ url_for('preparedness') }}" class="active">Preparedness</a></li>
+    <li><a href="{{ url_for('blogs') }}">Blogs</a></li>
+    <li><a href="{{ url_for('login') }}">Login</a></li>
+  </ul>
+</nav>
+
+  <div class="container">
+    <h1>🏠 Disaster Preparedness Predictor</h1>
+
+    <form id="prepForm">
+      <label for="state">State</label>
+      <select id="state" required></select>
+
+      <label for="disaster_type">Disaster Type</label>
+      <select id="disaster_type" required></select>
+
+      <label for="household_size">Household Size</label>
+      <input type="number" id="household_size" min="1" value="3" required />
+
+      <label for="has_kit">Do you own a disaster kit?</label>
+      <input type="checkbox" id="has_kit" />
+
+      <div id="checklistContainer" class="checklist"></div>
+
+      <button type="submit">🔍 Predict Preparedness</button>
+    </form>
+
+    <div id="result" class="result"></div>
+  </div>
+
+  <!-- <script src="static/preparedness.js"></script> -->
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Define states and Union Territories (UTs) list
+      const states_and_uts = [
+        "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh",
+        "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka",
+        "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram",
+        "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu",
+        "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal",
+        "Andaman and Nicobar Islands", "Chandigarh", "Dadra and Nagar Haveli and Daman and Diu", 
+        "Delhi", "Jammu and Kashmir", "Ladakh", "Lakshadweep", "Puducherry"
+      ];
+
+      // Define disaster types list
+      const all_disasters = [
+        "Flood", "Earthquake", "Landslide", "Drought", "Severe Storm", 
+        "Cyclone", "Heatwave", "Cold Wave", "Industrial Hazard"
+      ];
+
+      // Populate state dropdown
+      const stateSelect = document.getElementById("state");
+      states_and_uts.forEach(state => {
+        const option = document.createElement("option");
+        option.value = state;
+        option.textContent = state;
+        stateSelect.appendChild(option);
+      });
+
+      // Populate disaster type dropdown
+      const disasterSelect = document.getElementById("disaster_type");
+      all_disasters.forEach(disaster => {
+        const option = document.createElement("option");
+        option.value = disaster;
+        option.textContent = disaster;
+        disasterSelect.appendChild(option);
+      });
+
+      // Generate checklist dynamically
+      const checklistContainer = document.getElementById("checklistContainer");
+      const checklistItems = ["First Aid Kit", "Water Supply", "Emergency Food", "Flashlight", "Batteries", "Radio"];
+      checklistItems.forEach(item => {
+        const label = document.createElement("label");
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.name = item;
+        checkbox.value = item;
+        label.appendChild(checkbox);
+        label.appendChild(document.createTextNode(item));
+        checklistContainer.appendChild(label);
+        checklistContainer.appendChild(document.createElement("br"));
+      });
+
+      // Handle form submission
+      const form = document.getElementById("prepForm");
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault(); // Prevent default form submission
+
+        // Gather form data
+        const state = document.getElementById("state").value;
+        const disasterType = document.getElementById("disaster_type").value;
+        const householdSize = document.getElementById("household_size").value;
+        const hasKit = document.getElementById("has_kit").checked;
+        const checklistData = Array.from(document.querySelectorAll('#checklistContainer input:checked')).map(checkbox => checkbox.value);
+
+        // Create the payload to send to API
+        const payload = {
+          state,
+          disaster_type: disasterType,
+          household_size: householdSize,
+          has_kit: hasKit,
+          checklist: checklistData
+        };
+
+        try {
+          const response = await fetch('/api/predict', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            document.getElementById("result").innerHTML = `<h3>Preparedness Prediction:</h3><p>${data.result}</p>`;
+          } else {
+            throw new Error('Failed to get prediction');
+          }
+        } catch (error) {
+          console.error("Error:", error);
+          document.getElementById("result").innerHTML = "<p>Sorry, something went wrong. Please try again.</p>";
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

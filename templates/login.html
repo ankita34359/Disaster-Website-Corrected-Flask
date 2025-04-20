@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | ResQNow</title>
+  <!-- <link rel="stylesheet" href="login.css"> -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+
+</head>
+<body class="auth-page">
+  <!-- Using url_for -->
+<nav class="navbar">
+  <div class="logo">🛟 ResQNow</div>
+  <ul class="nav-links">
+    <li><a href="{{ url_for('home') }}">Home</a></li>
+    <li><a href="{{ url_for('mitigation') }}">Mitigation</a></li>
+    <li><a href="{{ url_for('preparedness') }}">Preparedness</a></li>
+    <li><a href="{{ url_for('blogs') }}">Blogs</a></li>
+    <li><a href="{{ url_for('login') }}" class="active">Login</a></li>
+  </ul>
+</nav>
+  
+  <div class="form-container">
+    <h2>🔐 Login</h2>
+    <form id="login-form">
+      <input type="email" id="login-email" placeholder="Email ID" required>
+      <input type="password" id="login-pass" placeholder="Password" required>
+
+      <div class="show-password">
+        <label><input type="checkbox" onclick="toggleLoginPassword()"> Show Password</label>
+      </div>
+
+      <button type="submit">Login</button>
+      <p class="switch-link">Don't have an account? <a href="{{ url_for('signup') }}">Sign up</a></p>
+    </form>
+    <p id="login-msg"></p>
+  </div>
+
+  <script>
+    function toggleLoginPassword() {
+      const pass = document.getElementById("login-pass");
+      pass.type = pass.type === "password" ? "text" : "password";
+    }
+
+    document.getElementById("login-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const enteredEmail = document.getElementById("login-email").value.trim();
+      const enteredPass = document.getElementById("login-pass").value;
+      const msg = document.getElementById("login-msg");
+
+      const storedEmail = localStorage.getItem("userEmail");
+      const storedPass = localStorage.getItem("userPass");
+
+      if (enteredEmail === storedEmail && enteredPass === storedPass) {
+        msg.textContent = "✅ Login successful! Redirecting...";
+        msg.style.color = "green";
+        setTimeout(() => {
+          // window.location.href = "index.html";
+          window.location.href = "/";  // Redirects to the home route
+        }, 1500);
+      } else {
+        msg.textContent = "❌ Invalid email or password.";
+        msg.style.color = "red";
+      }
+    });
+  </script>
+</body>
+</html>

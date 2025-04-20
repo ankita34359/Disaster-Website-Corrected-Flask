@@ -1,0 +1,161 @@
+/* 🎨 Color Palette */
+:root {
+    --red: #E63946;
+    --orange: #F4A261;
+    --green: #2A9D8F;
+    --blue: #457B9D;
+    --dark: #264653;
+    --light: #F8F9FA;
+    --white: #ffffff;
+    --gray: #e0e0e0;
+  }
+  
+  /* ✅ Base Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  
+  /* 🌐 Navbar */
+  .navbar {
+    background-color: var(--dark);
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    flex-wrap: wrap;
+    position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+  }
+  
+  .nav-links li a.active {
+    background-color: var(--orange);
+    color: var(--white);
+    font-weight: bold;
+  }
+  
+  .nav-links li a:hover {
+    color: var(--green);
+  }
+  
+  /* 🏠 Hero Section */
+  .hero {
+    background: linear-gradient(to right, var(--dark), var(--green));
+    color: var(--white);
+    padding: 5rem 2rem;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding-top: 80px;
+  }
+  
+  .hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* 🎯 Buttons */
+  .btn-group {
+    margin-top: 2rem;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 0.9rem 1.7rem;
+    margin: 0 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn.green {
+    background-color: var(--green);
+    color: var(--white);
+  }
+  
+  .btn.green:hover {
+    background-color: var(--orange);
+    transform: scale(1.05);
+  }
+  
+  .btn.blue {
+    background-color: var(--blue);
+    color: var(--white);
+  }
+  
+  .btn.blue:hover {
+    background-color: var(--red);
+    transform: scale(1.05);
+  }
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid white;
+}
+
+.profile-card {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 220px;
+  z-index: 999;
+}
+
+.hidden {
+  display: none;
+}

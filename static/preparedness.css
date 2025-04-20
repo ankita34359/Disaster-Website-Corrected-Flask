@@ -1,0 +1,150 @@
+:root {
+    --red: #E63946;
+    --orange: #F4A261;
+    --green: #2A9D8F;
+    --blue: #457B9D;
+    --dark: #264653;
+    --light: #F8F9FA;
+    --white: #ffffff;
+    --gray: #e0e0e0;
+  }
+  
+  /* ✅ Base Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: rgb(0, 109, 128);
+    color: var(--dark);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    background-color: rgb(32, 168, 226); /* Soft light blue-gray */
+  }
+  
+  /* 🌐 Navbar */
+  .navbar {
+    background-color: var(--dark);
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    flex-wrap: wrap;
+    position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+  }
+  
+  .nav-links li a.active {
+    background-color: var(--orange);
+    color: var(--white);
+    font-weight: bold;
+  }
+  
+  .nav-links li a:hover {
+    color: var(--green);
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+    border-radius: 16px;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  input[type="number"],
+  select {
+    width: 100%;
+    padding: 0.7rem;
+    margin-top: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  input[type="checkbox"] {
+    margin-top: 0.6rem;
+    transform: scale(1.2);
+  }
+  
+  button {
+    margin-top: 2rem;
+    width: 100%;
+    background: #4CAF50;
+    color: white;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background: #43a047;
+  }
+  
+  .checklist {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #f3f3f3;
+    border-radius: 12px;
+  }
+  
+  .checklist label {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0;
+  }
+  
+  .result {
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 10px;
+    background: #e8f5e9;
+    color: #1b5e20;
+    font-size: 1rem;
+  }

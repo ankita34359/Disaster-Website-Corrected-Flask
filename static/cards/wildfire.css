@@ -1,0 +1,94 @@
+/* 🔥 Wildfire Theme Styles */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom right, #f0714e, #f8d528);
+    background-size: 300% 300%;
+    animation: wildfireFlow 16s ease infinite;
+    color: #fdfdfd;
+    overflow-x: hidden;
+  }
+  
+  @keyframes wildfireFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .wildfire-hero {
+    padding: 3rem 1rem 2rem;
+    text-align: center;
+    background-color: rgba(25, 16, 0, 0.7);
+    backdrop-filter: blur(4px);
+    color: #ffffff;
+  }
+  
+  .wildfire-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: dropFade 1.2s ease-out;
+  }
+  
+  .wildfire-hero p {
+    font-size: 1.2rem;
+    animation: dropFade 1.8s ease-in;
+  }
+  
+  @keyframes dropFade {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  .qa-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .qa-box {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-left: 5px solid #ff6b35;
+    border-radius: 14px;
+    padding: 1.5rem;
+    flex: 1 1 460px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+  }
+  
+  .qa-box h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #fff7ed;
+  }
+  
+  .qa-box ul {
+    list-style-type: disc;
+    padding-left: 1.2rem;
+  }
+  
+  .qa-box li {
+    margin-bottom: 0.6rem;
+    color: #ffe4c4;
+    line-height: 1.6;
+  }
+  
+  .qa-box:hover {
+    transform: translateY(-8px);
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .wildfire-footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #1e0f00;
+    color: #fef3c7;
+    font-size: 0.95rem;
+  }
+  

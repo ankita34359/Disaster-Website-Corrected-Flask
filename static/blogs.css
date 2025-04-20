@@ -1,0 +1,174 @@
+/* 📄 Blogs Page CSS */
+
+/* 🎨 Color Palette */
+:root {
+  --red: #E63946;
+  --orange: #F4A261;
+  --green: #2A9D8F;
+  --blue: #457B9D;
+  --dark: #264653;
+  --light: #F8F9FA;
+  --white: #ffffff;
+  --gray: #e0e0e0;
+}
+
+/* ✅ Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #111827;
+  background: linear-gradient(135deg, #75a6f5, #10b981, #f97316);
+  background-size: 400% 400%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;  /* Prevent horizontal scrolling */
+}
+
+/* ✅ Fixed Navbar (same as other pages) */
+.navbar {
+  background-color: var(--dark);
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  flex-wrap: wrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+  padding: 0.4rem 1.2rem;
+  border-radius: 50px;
+}
+
+.nav-links li a.active {
+  background-color: var(--orange);
+  color: var(--white);
+  font-weight: bold;
+}
+
+.nav-links li a:hover {
+  color: var(--green);
+}
+
+/* ✅ Main Blog Page Layout */
+.blog-page {
+  padding-top: 80px; /* space for fixed navbar */
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2f7896, #1b8175); /* Dark gradient matching navbar */
+  background-size: 400% 400%; /* Smooth gradient animation */
+  animation: gradientBG 15s ease infinite;
+  color: var(--white); /* Text color to match the navbar */
+  overflow-x: hidden;
+}
+
+/* ✅ Header Section */
+.header {
+  text-align: center;
+  color: #ffffff;
+  padding: 10px 20px 10px 10px;
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* ✅ Cards Container */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 30px 20px 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ✅ Blog Card */
+.card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 25px 20px;
+  text-decoration: none;
+  color: #111827;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border: 2px solid #e5e7eb;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #4b5563;
+  margin-top: 10px;
+}
+
+/* ✅ Card Hover */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(120deg, #fef9c3, #dbeafe);
+}
+
+/* ✅ Footer */
+.footer {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: #1f2937;
+  color: #9ca3af;
+  font-size: 0.95rem;
+  margin-top: 60px;
+}
+
+/* ✅ Responsive Fixes */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 10px;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .card h2 {
+    font-size: 1.2rem;
+  }
+}

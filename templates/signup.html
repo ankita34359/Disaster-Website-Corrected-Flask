@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up | ResQNow</title>
+  <link rel="stylesheet" href="signup.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='signup.css') }}">
+
+</head>
+<body class="auth-bg auth-page">
+  <!-- Using url_for -->
+<nav class="navbar">
+  <div class="logo">🛟 ResQNow</div>
+  <ul class="nav-links">
+    <li><a href="{{ url_for('home') }}">Home</a></li>
+    <li><a href="{{ url_for('mitigation') }}">Mitigation</a></li>
+    <li><a href="{{ url_for('preparedness') }}">Preparedness</a></li>
+    <li><a href="{{ url_for('blogs') }}">Blogs</a></li>
+    <li><a href="{{ url_for('login') }}" class="active">Login</a></li>
+  </ul>
+</nav>
+
+  <div class="form-container">
+    <h2>📝 Sign Up</h2>
+    <form id="signup-form">
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="email" id="signup-email" placeholder="Email ID" required>
+      <input type="password" id="signup-pass" placeholder="Create Password" required>
+      <input type="password" id="confirm-pass" placeholder="Confirm Password" required>
+
+      <div class="show-password">
+        <input type="checkbox" id="showPass" onclick="toggleSignupPassword()">
+        <label for="showPass">Show Password</label>
+      </div>
+
+      <button type="submit">Sign Up</button>
+      <p class="switch-link">Already have an account? <a href="login.html">Login</a></p>
+    </form>
+    <p id="signup-msg"></p>
+  </div>
+
+  <script>
+    function toggleSignupPassword() {
+      const pass = document.getElementById("signup-pass");
+      const confirm = document.getElementById("confirm-pass");
+      const isVisible = pass.type === "text";
+      pass.type = isVisible ? "password" : "text";
+      confirm.type = isVisible ? "password" : "text";
+    }
+
+    document.getElementById("signup-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const email = document.getElementById("signup-email").value.trim();
+      const pass = document.getElementById("signup-pass").value;
+      const confirmPass = document.getElementById("confirm-pass").value;
+      const msg = document.getElementById("signup-msg");
+
+      if (pass !== confirmPass) {
+        msg.textContent = "❌ Passwords do not match.";
+        msg.style.color = "red";
+        return;
+      }
+
+      // Save to localStorage
+      localStorage.setItem("userEmail", email);
+      localStorage.setItem("userPass", pass);
+
+      msg.textContent = "✅ Account created successfully! Redirecting to login...";
+      msg.style.color = "green";
+      
+      setTimeout(() => {
+        window.location.href = "login.html";
+      }, 1500);
+    });
+  </script>
+</body>
+</html>
